@@ -1,10 +1,12 @@
 import Modal from "../../../ui/Modal";
+import toLocalDateShort from "../../../utils/toLocalDateShort";
 
 interface TableModalType {
   setNoteOpen: (open: boolean) => void;
   noteOpen: boolean;
   title: string;
   description: string;
+  createdAt: Date;
 }
 
 const TableModal: React.FC<TableModalType> = ({
@@ -12,6 +14,7 @@ const TableModal: React.FC<TableModalType> = ({
   setNoteOpen,
   title,
   description,
+  createdAt,
 }) => {
   return (
     <Modal
@@ -33,6 +36,12 @@ const TableModal: React.FC<TableModalType> = ({
               متن یادداشت
             </span>
             <p>{description}</p>
+          </div>
+          <div className="w-full">
+            <span className="mb-2 block text-secondery-700  font-bold">
+              زمان ساخت
+            </span>
+            <p>{toLocalDateShort(createdAt)}</p>
           </div>
         </div>
       </div>

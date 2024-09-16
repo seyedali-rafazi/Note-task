@@ -12,7 +12,7 @@ const Header: React.FC = () => {
           onClick={() => setAddNoteOpen(true)}
           className="text-lg font-extrabold"
         >
-          اضافه کردن یادداشت <span className="text-2xl font-bold">+</span>
+         نوشتن <span className="text-2xl font-bold">+</span>
         </Button>
       </div>
       <NoteModal addNoteOpen={addNoteOpen} setAddNoteOpen={setAddNoteOpen} />

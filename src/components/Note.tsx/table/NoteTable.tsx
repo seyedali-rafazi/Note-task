@@ -34,7 +34,7 @@ const NoteTable: React.FC = () => {
   return (
     <div className="max-w-[2000px] mx-auto">
       {notes.length === 0 ? (
-        "هیچ یادداشتی وجود ندارد"
+        <p className="p-4 font-bold text-lg">هیچ یادداشتی وجود ندارد.</p>
       ) : (
         <div>
           <div className="flex justify-end p-5">

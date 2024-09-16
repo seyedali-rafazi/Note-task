@@ -1,4 +1,3 @@
-// NoteRow.tsx
 import React, { useState } from "react";
 import Table from "../../../ui/Table";
 import { truncateText } from "../../../utils/TruncateText";
@@ -14,6 +13,7 @@ interface Note {
   title: string;
   description: string;
   date: Date;
+  createdAt: Date;
 }
 
 interface NoteRowProps {
@@ -64,6 +64,7 @@ const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
             setNoteOpen={setNoteOpen}
             title={note.title}
             description={note.description}
+            createdAt={note.createdAt}
           />,
           document.body
         )}
