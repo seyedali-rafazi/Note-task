@@ -54,10 +54,10 @@ const EditModal: React.FC<EditModalType> = ({
       open={editNoteOpen}
       width="w-full md:w-2/3 lg:w-1/2 "
     >
-      <div className="flex items-center justify-center bg-white w-full md:max-h-[calc(100vw-40rem)] h-full p-6">
-        <div className="flex flex-col gap-5 justify-center items-center font-normal text-sm w-full h-full">
+      <div className="flex items-center justify-center bg-white w-full p-6">
+        <div className="flex flex-col gap-5 justify-center items-center font-normal text-sm w-full ">
           <form
-            className="flex flex-col gap-10 items-center justify-center w-full h-full"
+            className="flex flex-col gap-10 items-center justify-center w-full "
             onSubmit={handleSubmit}
           >
             <TextField

@@ -23,7 +23,7 @@ const TableModal: React.FC<TableModalType> = ({
       open={noteOpen}
       width="w-full md:w-2/3 lg:w-1/2 "
     >
-      <div className="flex items-center justify-center bg-white w-full md:max-h-[calc(100vw-40rem)] h-full p-6">
+      <div className="flex items-center justify-center bg-white w-full p-6">
         <div className="flex flex-col gap-5 justify-center items-center font-normal text-sm w-full h-full">
           <div className="w-full">
             <span className="mb-2 block text-secondery-700 font-bold">
