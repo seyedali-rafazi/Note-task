@@ -36,7 +36,7 @@ const Modal: React.FC<ModalType> = ({
         >
           <div className="relative flex flex-col items-center">
             <div className="flex justify-center w-full mb-4">
-              <div className="font-bold">{logo}</div>
+              <div className="font-bold text-lg">{logo}</div>
               <button onClick={onClose} className="absolute top-1 left-3">
                 <CloseButton />
               </button>

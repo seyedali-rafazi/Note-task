@@ -3,7 +3,7 @@ import CustomeNavlink from "./CustomeNavlink";
 
 const Sidebar: React.FC = () => {
   return (
-    <div className="bg-secondery-0 row-start-1 row-span-2 h-screen p-4 space-y-3">
+    <div className="bg-secondary-200 row-start-1 row-span-2 h-screen p-4 space-y-3">
       <CustomeNavlink path="/">
         <DashboardButton />
         <span>داشبورد</span>

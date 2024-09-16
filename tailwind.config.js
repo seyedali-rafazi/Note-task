@@ -27,7 +27,7 @@ export default {
           200: withOpacity("--color-primary-200"),
           100: withOpacity("--color-primary-100"),
         },
-        secondery: {
+        secondary: {
           900: withOpacity("--color-secondary-900"),
           800: withOpacity("--color-secondary-800"),
           700: withOpacity("--color-secondary-700"),

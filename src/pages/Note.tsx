@@ -1,10 +1,13 @@
+import AddNote from "../components/Note.tsx/AddNote";
 import Layout from "../ui/Layout";
 
 const Note: React.FC = () => {
   return (
     <div className="max-w-[2000px] mx-auto">
       <Layout>
-        <div></div>
+        <div>
+          <AddNote />
+        </div>
       </Layout>
     </div>
   );
