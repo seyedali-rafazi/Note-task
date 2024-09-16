@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
+import Button from "../../../ui/Button";
 import NoteModal from "./NoteModal";
 
 const Header: React.FC = () => {

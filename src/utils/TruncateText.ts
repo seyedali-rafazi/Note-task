@@ -1,9 +1,4 @@
-interface TruncateTextType {
-  str: string;
-  length: number;
-}
-
-export function truncateText({ str, length }: TruncateTextType): string {
+export function truncateText(str: string, length: number): string {
   if (str.length < length) {
     return str;
   }
