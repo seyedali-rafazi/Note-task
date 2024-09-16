@@ -1,4 +1,6 @@
 # Note App
+### See [Live](https://note-task-mu.vercel.app/)
+
 
 A simple and efficient note-taking app built using React. This app allows users to create, edit, and delete notes. It also supports date selection for setting deadlines and provides a seamless user experience with real-time notifications and smooth interface transitions.
 
