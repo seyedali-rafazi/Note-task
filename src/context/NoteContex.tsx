@@ -14,12 +14,19 @@ interface Note {
   completed: boolean;
   createdAt: string;
 }
+interface EditNote {
+  title: string;
+  description: string;
+  id: string;
+  date: Date;
+}
 
 // Define the possible action types and payload structures
 type Action =
   | { type: "addNotes"; payload: Note }
-  | { type: "deleteNotes"; payload: string } // Assuming the payload is the note ID
-  | { type: "completeNotes"; payload: string }; // Assuming the payload is the note ID
+  | { type: "deleteNotes"; payload: string }
+  | { type: "completeNotes"; payload: string }
+  | { type: "changeNote"; payload: EditNote };
 
 // Define the reducer state type as an array of Note
 type State = Note[];
@@ -42,6 +49,10 @@ function notesReducer(state: State, action: Action): State {
         note.id === action.payload
           ? { ...note, completed: !note.completed }
           : note
+      );
+    case "changeNote":
+      return state.map((note) =>
+        note.id === action.payload.id ? { ...note, ...action.payload } : note
       );
     default:
       throw new Error("Unknown action type");

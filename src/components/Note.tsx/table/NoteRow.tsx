@@ -12,7 +12,7 @@ interface Note {
   id: string;
   title: string;
   description: string;
-  date?: string;
+  date: Date;
 }
 
 interface NoteRowProps {
@@ -43,9 +43,7 @@ const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
 
   const status = limitDay(note.date);
   const statusKey: NoteStatusKey =
-    status.remainNote === "DANGER"
-      ? "DANGER"
-      : "SAFE"
+    status.remainNote === "DANGER" ? "DANGER" : "SAFE";
 
   return (
     <>
@@ -61,7 +59,12 @@ const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
             {NoteStatus[statusKey].label}
           </span>
         </Table.Cell>
-        <NoteOperation id={note.id} />
+        <NoteOperation
+          id={note.id}
+          title={note.title}
+          description={note.description}
+          date={note.date}
+        />
       </Table.Row>
       {noteOpen &&
         ReactDOM.createPortal(
