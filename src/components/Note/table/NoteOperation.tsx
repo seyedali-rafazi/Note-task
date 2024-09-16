@@ -5,13 +5,7 @@ import ButtonIcon from "../../../ui/ButtonIcon";
 import Table from "../../../ui/Table";
 import ReactDOM from "react-dom";
 import EditModal from "./EditModal";
-
-interface NoteOperationProps {
-  id: string;
-  title: string;
-  description: string;
-  date: Date;
-}
+import { NoteOperationProps } from "../../../types/NoteType";
 
 const NoteOperation: React.FC<NoteOperationProps> = ({
   id,

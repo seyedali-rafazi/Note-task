@@ -5,15 +5,8 @@ import Modal from "../../../ui/Modal";
 import TextField from "../../../ui/TextField";
 import toast from "react-hot-toast";
 import { useNoteDispatch } from "../../../context/NoteContex";
+import { EditModalType } from "../../../types/NoteType";
 
-interface EditModalType {
-  setEditNoteOpen: (open: boolean) => void;
-  editNoteOpen: boolean;
-  id: string;
-  prevTitle: string;
-  prevDescription: string;
-  prevDate: Date;
-}
 
 const EditModal: React.FC<EditModalType> = ({
   setEditNoteOpen,

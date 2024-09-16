@@ -5,11 +5,8 @@ import TextField from "../../../ui/TextField";
 import { useNoteDispatch } from "../../../context/NoteContex";
 import DatePickerField from "../../../ui/DatePickerField";
 import toast from "react-hot-toast";
+import { Note, NoteModalType } from "../../../types/NoteType";
 
-interface NoteModalType {
-  setAddNoteOpen: (open: boolean) => void;
-  addNoteOpen: boolean;
-}
 
 const NoteModal: React.FC<NoteModalType> = ({
   addNoteOpen,
@@ -17,13 +14,13 @@ const NoteModal: React.FC<NoteModalType> = ({
 }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState(new Date(""));
+  const [date, setDate] = useState<Date>(new Date());
   const dispatch = useNoteDispatch();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (title && description && date) {
-      const newNote = {
+      const newNote: Note = {
         title,
         description,
         date,

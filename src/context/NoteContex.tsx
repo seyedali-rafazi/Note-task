@@ -5,21 +5,7 @@ import {
   ReactNode,
   Dispatch,
 } from "react";
-
-interface Note {
-  title: string;
-  description: string;
-  id: string;
-  completed: boolean;
-  createdAt: string;
-  date?: Date;
-}
-interface EditNote {
-  title: string;
-  description: string;
-  id: string;
-  date: Date;
-}
+import { EditNote, Note } from "../types/NoteType";
 
 // Define the possible action types and payload structures
 type Action =

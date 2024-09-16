@@ -1,9 +1,4 @@
-import { ChangeEventHandler } from "react";
-
-interface SonrtNotesType {
-  sortBy: string;
-  onSort: ChangeEventHandler<HTMLSelectElement>;
-}
+import { SonrtNotesType } from "../../../types/NoteType";
 
 const SortNotes: React.FC<SonrtNotesType> = ({ sortBy, onSort }) => {
   return (

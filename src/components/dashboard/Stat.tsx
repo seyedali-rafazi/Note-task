@@ -1,18 +1,6 @@
 import React from "react";
 import { toPersianNumbers } from "../../utils/FrormatNumber";
-
-type StatProps = {
-  icon: React.ReactNode;
-  value: number | string;
-  title: string;
-  color: keyof typeof colors;
-};
-
-const colors = {
-  primary: "bg-primary-100 text-primary-700",
-  green: "bg-green-100 text-green-700",
-  yellow: "bg-blue-100 text-blue-700",
-};
+import { colors, StatProps } from "../../types/DashboardType";
 
 const Stat: React.FC<StatProps> = ({ icon, value, title, color }) => {
   return (

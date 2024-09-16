@@ -1,13 +1,6 @@
+import { TableModalType } from "../../../types/NoteType";
 import Modal from "../../../ui/Modal";
 import toLocalDateShort from "../../../utils/toLocalDateShort";
-
-interface TableModalType {
-  setNoteOpen: (open: boolean) => void;
-  noteOpen: boolean;
-  title: string;
-  description: string;
-  createdAt: Date;
-}
 
 const TableModal: React.FC<TableModalType> = ({
   noteOpen,

@@ -7,19 +7,7 @@ import TableModal from "./TableModal";
 import ReactDOM from "react-dom";
 import limitDay from "../../../utils/limitDay";
 import NoteOperation from "./NoteOperation";
-
-interface Note {
-  id: string;
-  title: string;
-  description: string;
-  date: Date;
-  createdAt: Date;
-}
-
-interface NoteRowProps {
-  note: Note;
-  index: number;
-}
+import { NoteRowProps } from "../../../types/NoteType";
 
 type NoteStatusKey = "DANGER" | "SAFE" | "EXPIRED";
 
