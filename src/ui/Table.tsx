@@ -51,14 +51,15 @@ const TableRow: React.FC<TableRowProps> = ({ children }) => {
 // TableCell Component
 interface TableCellProps {
   children: ReactNode;
+  className?: string;
 }
 
 const TableHeaderCell: React.FC<TableCellProps> = ({ children }) => {
   return <th className="p-2">{children}</th>;
 };
 
-const TableCell: React.FC<TableCellProps> = ({ children }) => {
-  return <td className="p-2">{children}</td>;
+const TableCell: React.FC<TableCellProps> = ({ children, className }) => {
+  return <td className={`p-2 ${className}`}>{children}</td>;
 };
 
 // Assign sub-components to the main Table component

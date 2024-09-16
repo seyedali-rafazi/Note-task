@@ -21,12 +21,14 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
     }
   };
 
+  const today = new DateObject(); // Get today's date
+
   return (
     <div className="w-full">
       <span className="mb-2 block text-secondery-700">{label}</span>
 
       <DatePicker
-        containerClassName="w-full "
+        containerClassName="w-full"
         inputClass="textField__input"
         calendarPosition="bottom-center"
         value={data}
@@ -34,6 +36,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
         format="YYYY-MM-DD"
         calendar={persian}
         locale={persian_fa}
+        minDate={today} // Disable past dates
       />
     </div>
   );

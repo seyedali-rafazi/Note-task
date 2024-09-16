@@ -5,18 +5,47 @@ import toLocalDateShort from "../../../utils/toLocalDateShort";
 import Button from "../../../ui/Button";
 import TableModal from "./TableModal";
 import ReactDOM from "react-dom";
+import limitDay from "../../../utils/limitDay";
+import NoteOperation from "./NoteOperation";
+
+interface Note {
+  id: string;
+  title: string;
+  description: string;
+  date?: string;
+}
 
 interface NoteRowProps {
-  note: any;
+  note: Note;
   index: number;
 }
+
+type NoteStatusKey = "DANGER" | "SAFE" | "EXPIRED";
+
+const NoteStatus: Record<NoteStatusKey, { label: string; className: string }> =
+  {
+    DANGER: {
+      label: "ددلاین نزدیک است",
+      className: "badge--danger",
+    },
+    SAFE: {
+      label: "ددلاین فرصت دارد",
+      className: "badge--success",
+    },
+    EXPIRED: {
+      label: "ددلاین منقضی شده است",
+      className: "badge--secondary",
+    },
+  };
 
 const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
   const [noteOpen, setNoteOpen] = useState(false);
 
-  const date = new Date(note.date);
-  const dayLimit = date.getDate(); // Extracts the day
-  console.log(dayLimit); // Logs the day of the month
+  const status = limitDay(note.date);
+  const statusKey: NoteStatusKey =
+    status.remainNote === "DANGER"
+      ? "DANGER"
+      : "SAFE"
 
   return (
     <>
@@ -27,11 +56,12 @@ const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
           <Button onClick={() => setNoteOpen(true)}>باز کردن متن</Button>
         </Table.Cell>
         <Table.Cell>{toLocalDateShort(note.date)}</Table.Cell>
-        <Table.Cell>{note.status}</Table.Cell>
         <Table.Cell>
-          <button className="text-blue-500 hover:underline mr-2">Edit</button>
-          <button className="text-red-500 hover:underline">Delete</button>
+          <span className={`badge ${NoteStatus[statusKey].className}`}>
+            {NoteStatus[statusKey].label}
+          </span>
         </Table.Cell>
+        <NoteOperation id={note.id} />
       </Table.Row>
       {noteOpen &&
         ReactDOM.createPortal(

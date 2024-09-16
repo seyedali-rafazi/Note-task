@@ -2,8 +2,9 @@ import { useState } from "react";
 import Modal from "../../../ui/Modal";
 import Button from "../../../ui/Button";
 import TextField from "../../../ui/TextField";
-import { useNote, useNoteDispatch } from "../../../context/NoteContex";
+import { useNoteDispatch } from "../../../context/NoteContex";
 import DatePickerField from "../../../ui/DatePickerField";
+import toast from "react-hot-toast";
 
 interface NoteModalType {
   setAddNoteOpen: (open: boolean) => void;
@@ -20,24 +21,24 @@ const NoteModal: React.FC<NoteModalType> = ({
   const dispatch = useNoteDispatch();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    if (!title || !description) return null;
     e.preventDefault();
-
-    const newNote = {
-      title,
-      description,
-      date,
-      id: Date.now().toString(),
-      completed: false,
-      createdAt: new Date().toISOString(),
-    };
-
-    setTitle("");
-    setDescription("");
-    dispatch({ type: "addNotes", payload: newNote });
-    setAddNoteOpen(false);
+    if (title && description && date) {
+      const newNote = {
+        title,
+        description,
+        date,
+        id: Date.now().toString(),
+        completed: false,
+        createdAt: new Date().toISOString(),
+      };
+      setTitle("");
+      setDescription("");
+      setDate(new Date(""));
+      dispatch({ type: "addNotes", payload: newNote });
+      setAddNoteOpen(false);
+      toast.success("یادداشت با موفقیت اضاقه شد");
+    } else toast.error("لطفا تمام بخش هارو تکمیل کنید");
   };
-  
 
   return (
     <Modal
@@ -71,7 +72,6 @@ const NoteModal: React.FC<NoteModalType> = ({
               label="متن"
             />
             <DatePickerField data={date} setDate={setDate} label="ددلاین" />
-
             <Button
               type="submit"
               className="btn btn--primary font-bold text-base"
