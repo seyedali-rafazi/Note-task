@@ -1,3 +1,4 @@
+// NoteRow.tsx
 import React, { useState } from "react";
 import Table from "../../../ui/Table";
 import { truncateText } from "../../../utils/TruncateText";
@@ -24,23 +25,13 @@ type NoteStatusKey = "DANGER" | "SAFE" | "EXPIRED";
 
 const NoteStatus: Record<NoteStatusKey, { label: string; className: string }> =
   {
-    DANGER: {
-      label: "ددلاین نزدیک است",
-      className: "badge--danger",
-    },
-    SAFE: {
-      label: "ددلاین فرصت دارد",
-      className: "badge--success",
-    },
-    EXPIRED: {
-      label: "ددلاین منقضی شده است",
-      className: "badge--secondary",
-    },
+    DANGER: { label: "ددلاین نزدیک است", className: "badge--danger" },
+    SAFE: { label: "ددلاین فرصت دارد", className: "badge--success" },
+    EXPIRED: { label: "ددلاین منقضی شده است", className: "badge--secondary" },
   };
 
 const NoteRow: React.FC<NoteRowProps> = ({ note, index }) => {
   const [noteOpen, setNoteOpen] = useState(false);
-
   const status = limitDay(note.date);
   const statusKey: NoteStatusKey =
     status.remainNote === "DANGER" ? "DANGER" : "SAFE";
