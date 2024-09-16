@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import useOutsideClick from "../hooks/useOutsideClick";
 import { CloseButton, DashboardButton, NoteButton } from "../icons/Icon";
 import Button from "./Button";
 import CustomeNavlink from "./CustomeNavlink";
@@ -10,7 +9,6 @@ interface SideNavigatorType {
 }
 
 const SideNavigator: React.FC<SideNavigatorType> = ({ open, onClose }) => {
-  const modalRef = useOutsideClick(onClose);
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

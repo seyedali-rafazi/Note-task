@@ -4,14 +4,6 @@ import Table from "../../../ui/Table";
 import NoteRow from "./NoteRow";
 import SortNotes from "./SortNotes";
 
-interface Note {
-  id: string;
-  createdAt: string;
-  completed: boolean;
-  // Add other properties as needed
-}
-
-
 const NoteTable: React.FC = () => {
   const notes = useNote();
   const [sortBy, setSortBy] = useState("latest");

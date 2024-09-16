@@ -1,4 +1,4 @@
-import AddNote from "../components/Note.tsx/AddNote";
+import AddNote from "../components/Note/AddNote";
 import Layout from "../ui/Layout";
 
 const Note: React.FC = () => {

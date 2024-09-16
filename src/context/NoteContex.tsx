@@ -6,13 +6,13 @@ import {
   Dispatch,
 } from "react";
 
-// Define the shape of a note
 interface Note {
   title: string;
   description: string;
   id: string;
   completed: boolean;
   createdAt: string;
+  date?: Date;
 }
 interface EditNote {
   title: string;
