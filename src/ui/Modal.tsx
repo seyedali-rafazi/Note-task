@@ -15,7 +15,6 @@ const Modal: React.FC<ModalType> = ({
   children,
   onClose,
   logo,
-  width = "w-[calc(100vw-2rem)] md:max-w-lg rounded-lg",
 }) => {
   const modalref = useOutsideClick(onClose);
   useEffect(() => {
