@@ -31,7 +31,7 @@ This project is built with the following technologies:
 - **React Hot Toast**: Provides beautiful and simple toast notifications for user feedback.
 - **React Multi Date Picker**: Used for selecting dates when creating or editing notes.
 - **React Router DOM**: For handling client-side routing and navigation between different views.
-- **Tailwind CSS**: (If you're using it) For fast and easy styling with utility-first classes.
+- **Tailwind CSS**:For fast and easy styling with utility-first classes.
 
 ## Installation and Setup
 
@@ -87,7 +87,7 @@ This will create a `build` folder with the optimized version of the app.
 - [React](https://reactjs.org/)
 - [React Hot Toast](https://react-hot-toast.com/)
 - [React Multi Date Picker](https://shahabyazdi.github.io/react-multi-date-picker/)
-- [Tailwind CSS](https://tailwindcss.com/) (if applicable)
+- [Tailwind CSS](https://tailwindcss.com/)
 
 ---
 
