@@ -8,13 +8,13 @@ export default function limitDay(date: any) {
   // Convert time difference from milliseconds to days
   const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
 
-  if (daysDiff <= 0) {
+  if (daysDiff < 0) {
     return {
       daysRemain: daysDiff,
       remainNote: "EXPIRED",
     };
   }
-  if (daysDiff <= 7 && daysDiff >= 0) {
+  if ((daysDiff <= 7 && daysDiff >= 0) || daysDiff == 0) {
     return {
       daysRemain: daysDiff,
       remainNote: "DANGER",
